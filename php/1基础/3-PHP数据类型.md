@@ -182,3 +182,64 @@ var_dump($d);//NULL
 > Callback/Callable回调类型
 
      一些函数如 call_user_func() 或 usort() 可以接受用户自定义的回调函数作为参数。回调函数不止可以是简单函数，还可以是对象的方法，包括静态类方法。
+     一般使用call_user_func($callable,$arg1...)或者call_user_func_array($callable,[$arg1,$arg2...])来调用.
+     两者区别：
+       call_user_func调用时，参数从第二个开始是匿名函数参数列表
+       call_user_func_array调用时，第二个参数则是数组，数组里面存放匿名函数调用参数列表。
+       
+       
+      第一个参数都是匿名函数，可以是函数名字符串、数组形式
+      数组形式：
+        调用类的非静态方法：
+          [类实例 , 类方法名]
+          
+        调用类的静态方法：
+          [类名 , 类静态方法名]
+
+  
+ ```php
+function f1()
+{
+	echo 'f1', PHP_EOL;
+}
+
+class A
+{
+	public function f2()
+	{
+		echo 'A->f2', PHP_EOL;
+	}
+
+	public static function f3()
+	{
+		echo static::class . '::f3' . PHP_EOL;
+	}
+}
+
+class B extends A
+{
+
+}
+
+call_user_func('f1');
+call_user_func_array('f1', []);
+
+$a = new A;
+call_user_func([$a, 'f2']);
+call_user_func_array([$a, 'f2'], []);
+
+
+call_user_func([A::class, 'f3']);
+call_user_func_array([A::class, 'f3'], []);
+
+call_user_func([B::class, 'f3']);
+
+//f1
+//f1
+//A->f2
+//A->f2
+//A::f3
+//A::f3
+//B::f3
+
+ ```
