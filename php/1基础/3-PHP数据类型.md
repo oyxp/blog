@@ -1,5 +1,5 @@
 # PHP数据类型
->PHP共有8种数据类型，分为4种标准类型（`整型`、`浮点型`、`布尔型`以及`字符串类型`）、2种复合类型（`object对象类型`和`array数组类型`）以及2种特殊类型（`resource资源类型`和`NULL类型`）
+>PHP共有9种数据类型，分为4种标准类型（`整型`、`浮点型`、`布尔型`以及`字符串类型`）、2种复合类型（`Object对象类型`和`Array数组类型`）以及2种特殊类型（`Resource资源类型`和`NULL类型`）和 Callback/Callable回调类型
 
 ## 1、标准类型
 >`整型`、`浮点型`、`布尔型`以及`字符串类型`
@@ -97,3 +97,88 @@ echo $newdoc;
        1）、双引号和heredoc方式定义的字符串，里面的变量和特殊字符如"\n"会被解析；而单引号和newdoc方式定义的
        字符串里面的变量和特殊字符不会被解析；
        2）、heredoc和newdoc适合定义大文本字符串，而单引号和双引号则适合小文本字符串。
+
+
+## 2、复合类型
+> 复合类型包括 `Object`和`Array`两种类型
+
+#### 1）、Object类型
+      
+      new创建的类实例或者clone出来的实例
+
+```php
+<?php
+
+class Person {
+	public $name;
+	public function __construct($name) {
+		$this->name = $name;
+	}
+}
+
+$p = new Person('SnailZED');
+```
+
+#### 2）、Array类型
+     
+     PHP中的数组类型，实际上是一个有序映射，PHP数组可以存放不同类型的元素，而且数组长度是可以动态拓展的，这点跟强类型的语言是不同的。
+     
+     定义方式：
+       $a = array('a',false , null);
+       $b = [];    
+  
+```php
+<?php
+
+$a = array();
+$b = [];
+
+var_dump($a);
+var_dump($b);
+```  
+  
+## 3、特殊类型 
+>特殊类型包含`Resource`资源类型和`NULL`类型  
+
+#### 1）、Resource类型
+     
+     资源类型：保存了到外部资源的一个引用。资源是通过专门的函数来建立和使用的。例如文件句柄、redis连接或者mysql连接都属于资源类型。
+     
+```php
+<?php
+
+$redis = new Redis();
+$redis->connect('127.0.0.1',6379);
+
+var_dump($redis);
+```
+
+#### 2）、NULL类型
+
+    特殊的 NULL 值表示一个变量没有值，唯一可能的值就是 NULL。
+    值为NULL的情况有4种：
+      （1）被赋值为NULL
+      （2）定义但未被初始化的变量
+      （3）未定义的变量
+      （4）被unset的变量
+      
+```php
+<?php
+
+$a = NULL;
+$b;//NULL
+
+$d = 1;
+unset($d);
+
+var_dump($a);//NULL
+var_dump($b);//NULL
+var_dump($c);//NULL
+var_dump($d);//NULL
+```
+
+
+## 4、回调类型 
+> Callback/Callable回调类型
+
+     一些函数如 call_user_func() 或 usort() 可以接受用户自定义的回调函数作为参数。回调函数不止可以是简单函数，还可以是对象的方法，包括静态类方法。
