@@ -242,4 +242,5 @@ function testStatic(array $cities, $pid = 0, $level = 0)
 }
 
 var_dump(testStatic($cities));
+
 die;

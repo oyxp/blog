@@ -123,74 +123,73 @@ function testStatic(array $cities, $pid = 0, $level = 0)
 
 var_dump(testStatic($cities));
 
-/**
-* array(6) {
-    [0]=>
-    array(4) {
-      ["id"]=>
-      int(1)
-      ["pid"]=>
-      int(0)
-      ["name"]=>
-      string(9) "广东省"
-      ["level"]=>
-      int(0)
-    }
-    [1]=>
-    array(4) {
-      ["id"]=>
-      int(4)
-      ["pid"]=>
-      int(1)
-      ["name"]=>
-      string(9) "深圳市"
-      ["level"]=>
-      int(1)
-    }
-    [2]=>
-    array(4) {
-      ["id"]=>
-      int(6)
-      ["pid"]=>
-      int(1)
-      ["name"]=>
-      string(9) "广州市"
-      ["level"]=>
-      int(1)
-    }
-    [3]=>
-    array(4) {
-      ["id"]=>
-      int(2)
-      ["pid"]=>
-      int(0)
-      ["name"]=>
-      string(9) "山东省"
-      ["level"]=>
-      int(0)
-    }
-    [4]=>
-    array(4) {
-      ["id"]=>
-      int(5)
-      ["pid"]=>
-      int(2)
-      ["name"]=>
-      string(9) "烟台市"
-      ["level"]=>
-      int(1)
-    }
-    [5]=>
-    array(4) {
-      ["id"]=>
-      int(3)
-      ["pid"]=>
-      int(0)
-      ["name"]=>
-      string(9) "北京市"
-      ["level"]=>
-      int(0)
-    }
-  }
- */
- ```
+//array(6) {
+ //	[0]=>
+ //    array(4) {
+ //		["id"]=>
+ //      int(1)
+ //      ["pid"]=>
+ //      int(0)
+ //      ["name"]=>
+ //      string(9) "广东省"
+ //		["level"]=>
+ //      int(0)
+ //    }
+ //    [1]=>
+ //    array(4) {
+ //		["id"]=>
+ //      int(4)
+ //      ["pid"]=>
+ //      int(1)
+ //      ["name"]=>
+ //      string(9) "深圳市"
+ //		["level"]=>
+ //      int(1)
+ //    }
+ //    [2]=>
+ //    array(4) {
+ //		["id"]=>
+ //      int(6)
+ //      ["pid"]=>
+ //      int(1)
+ //      ["name"]=>
+ //      string(9) "广州市"
+ //		["level"]=>
+ //      int(1)
+ //    }
+ //    [3]=>
+ //    array(4) {
+ //		["id"]=>
+ //      int(2)
+ //      ["pid"]=>
+ //      int(0)
+ //      ["name"]=>
+ //      string(9) "山东省"
+ //		["level"]=>
+ //      int(0)
+ //    }
+ //    [4]=>
+ //    array(4) {
+ //		["id"]=>
+ //      int(5)
+ //      ["pid"]=>
+ //      int(2)
+ //      ["name"]=>
+ //      string(9) "烟台市"
+ //		["level"]=>
+ //      int(1)
+ //    }
+ //    [5]=>
+ //    array(4) {
+ //		["id"]=>
+ //      int(3)
+ //      ["pid"]=>
+ //      int(0)
+ //      ["name"]=>
+ //      string(9) "北京市"
+ //		["level"]=>
+ //      int(0)
+ //    }
+ //  }
+
+```
