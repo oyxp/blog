@@ -49,3 +49,22 @@ echo B1, PHP_EOL;//1
 echo B2, PHP_EOL;//2
 echo A::STATUS, PHP_EOL;//10
 ```
+
+## 4、常见的一些常量
+
+`__DIR__`:当前文件所在目录
+
+`__FILE__`:当前文件完整路径
+
+`__NAMESPACE__`:当前所在的命名空间
+
+`__FUNCTION__`：当前所在的函数名
+
+`__METHOD__`：当前所在的方法名，是包含了完整类名,如a\b\Person::a
+
+`__CLASS__`：当前类名，是包含了完整类名,如a\b\Person
+
+`__TRAIT__`：当前trait名，是包含了完整类名,如a\b\Person
+
+`__LINE__`：当前行数
+

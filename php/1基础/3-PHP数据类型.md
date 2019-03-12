@@ -136,6 +136,9 @@ $b = [];
 var_dump($a);
 var_dump($b);
 ```  
+    共有9个超全局数组：$GLOBALS,$_POST,$_GET,$_ENV,$_REQUEST,$_COOKIE,$_SERVER,$_FILES,$_SESSION
+
+     
   
 ## 3、特殊类型 
 >特殊类型包含`Resource`资源类型和`NULL`类型  
