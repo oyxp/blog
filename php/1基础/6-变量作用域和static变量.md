@@ -73,7 +73,7 @@ var_dump($username);
  ```php
  <?php
 
-//无线分级代码实现
+//无限分级代码实现
 $cities = [
 	[
 		'id'   => 1,
@@ -121,6 +121,20 @@ function testStatic(array $cities, $pid = 0, $level = 0)
 	return $results;
 }
 
+//function testStatic(array $cities, $pid = 0, $level = 0)
+//{
+//	 $results = [];//只会被初始化一次，函数执行完毕后不会释放，只能修饰局部变量
+//	foreach ($cities as $city)
+//	{
+//		if ($city['pid'] === $pid)
+//		{
+//			$city['level'] = $level;
+//          $city['children'] = testStatic($cities, $city['id'], $level+1);
+//			$results[] = $city;
+//		}
+//	}
+//	return $results;
+//}
 var_dump(testStatic($cities));
 
 //array(6) {
