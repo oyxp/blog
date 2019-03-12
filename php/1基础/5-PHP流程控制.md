@@ -36,7 +36,7 @@ foreach($arr as $k => $value){
 <?php
 
 $arr = range(0,100);
-reset($arr);//重置数组指针
+reset($arr);//重置数组指针，防止程序其他地方有修改数组指针位置
 while(list($k,$value) = each($arr)){
 	echo $value;
 }
