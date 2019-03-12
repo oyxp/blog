@@ -95,3 +95,67 @@ $a = range(0,100);//复制
 >两个变量都指向同一个内存空间
 
 ![$b = $a](./2.png)  
+
+
+## 6、面试真题
+```php
+<?php
+
+/**
+
+PHP笔试：
+1、每次循环的结果
+2、最终$data的结果
+**/
+$data = ['a','b','c'];
+
+foreach($data as $k=>$v){
+  $v = &$data[$k];
+  var_dump($data);
+}
+
+var_dump($data);
+
+//分析:
+//foreach循环是每次把数组的key和value分别赋值给$k和$v，需要注意每次赋值给$v前，$v的引用指向。
+//第1次循环把0赋值给k，a赋值给v，即$k = 0,$v = a,第一次循环完毕$v指向了$data[0],值为a, 打印结果：a,b,c
+//
+//第2次循环，把1赋值给k，把b赋值给v，这个时候v是指向data[0],所以data[0]= b,$k = 1,$v = b，第二次循环完毕，$v指向了$data[1]，打印结果为 b,b,c
+//
+//第3次循环，把2赋值给k，把c赋值给v，这个时候v是指向data[1],所以data[1]= c,$k = 1,$v = b，第二次循环完毕，$v指向了$data[1]，打印结果为 b,c,c
+//最终结果 b,c,c
+/**
+array(3) {
+  [0]=>
+  &string(1) "a"
+  [1]=>
+  string(1) "b"
+  [2]=>
+  string(1) "c"
+}
+array(3) {
+  [0]=>
+  string(1) "b"
+  [1]=>
+  &string(1) "b"
+  [2]=>
+  string(1) "c"
+}
+array(3) {
+  [0]=>
+  string(1) "b"
+  [1]=>
+  string(1) "c"
+  [2]=>
+  &string(1) "c"
+}
+array(3) {
+  [0]=>
+  string(1) "b"
+  [1]=>
+  string(1) "c"
+  [2]=>
+  &string(1) "c"
+}
+**/
+```
