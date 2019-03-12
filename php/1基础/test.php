@@ -163,34 +163,83 @@ $username = 'SnailZED';
 //
 //changUsername('Snail');
 //var_dump($username);//string(5) "Snail"
+//
+//function changUsernameByGlobal($username1)
+//{
+//	global $username;
+//	$username = $username1;
+//	unset($username);//unset的是引用，不会影响外部值
+//}
+//
+//changUsernameByGlobal('Snail');
+//var_dump($username);//string(5) "Snail"
+//
+//
+//$_POST['username'] = 'SnailZED';
+//
+//function changUsernameByGlobalArray($username1)
+//{
+//	$_POST['username'] = $username1;
+//}
+//
+//changUsernameByGlobalArray('Snail');
+//var_dump($_POST['username']);
+//
+//$username = 'SnailZED';
+//function changUsernameByReference(&$username1)
+//{
+//	$username1 = 'Snail';
+//}
+//
+//changUsernameByReference($username);
+//var_dump($username);
 
-function changUsernameByGlobal($username1)
+$cities = [
+	[
+		'id'   => 1,
+		'pid'  => 0,
+		'name' => '广东省'
+	],
+	[
+		'id'   => 2,
+		'pid'  => 0,
+		'name' => '山东省'
+	],
+	[
+		'id'   => 3,
+		'pid'  => 0,
+		'name' => '北京市'
+	],
+	[
+		'id'   => 4,
+		'pid'  => 1,
+		'name' => '深圳市'
+	],
+	[
+		'id'   => 5,
+		'pid'  => 2,
+		'name' => '烟台市'
+	],
+	[
+		'id'   => 6,
+		'pid'  => 1,
+		'name' => '广州市'
+	],
+];
+function testStatic(array $cities, $pid = 0, $level = 0)
 {
-	global $username;
-	$username = $username1;
-	unset($username);//unset的是引用，不会影响外部值
+	static $results = [];
+	foreach ($cities as $city)
+	{
+		if ($city['pid'] === $pid)
+		{
+			$city['level'] = $level;
+			$results[] = $city;
+			testStatic($cities, $city['id'], $level + 1);
+		}
+	}
+	return $results;
 }
 
-changUsernameByGlobal('Snail');
-var_dump($username);//string(5) "Snail"
-
-
-$_POST['username'] = 'SnailZED';
-
-function changUsernameByGlobalArray($username1)
-{
-	$_POST['username'] = $username1;
-}
-
-changUsernameByGlobalArray('Snail');
-var_dump($_POST['username']);
-
-$username = 'SnailZED';
-function changUsernameByReference(&$username1)
-{
-	$username1 = 'Snail';
-}
-
-changUsernameByReference($username);
-var_dump($username);
+var_dump(testStatic($cities));
 die;

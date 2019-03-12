@@ -63,3 +63,134 @@ changUsernameByReference($username);
 var_dump($username);
 ```
 ## 3、static变量
+> static变量
+   
+       特点：
+        （1）只能修饰局部变量，只能定义在函数或方法内部
+        （2）static变量只会初始化一次
+        （3）static变量在函数或方法结束后，不会释放
+         
+ ```php
+ <?php
+
+//无线分级代码实现
+$cities = [
+	[
+		'id'   => 1,
+		'pid'  => 0,
+		'name' => '广东省'
+	],
+	[
+		'id'   => 2,
+		'pid'  => 0,
+		'name' => '山东省'
+	],
+	[
+		'id'   => 3,
+		'pid'  => 0,
+		'name' => '北京市'
+	],
+	[
+		'id'   => 4,
+		'pid'  => 1,
+		'name' => '深圳市'
+	],
+	[
+		'id'   => 5,
+		'pid'  => 2,
+		'name' => '烟台市'
+	],
+	[
+		'id'   => 6,
+		'pid'  => 1,
+		'name' => '广州市'
+	],
+];
+function testStatic(array $cities, $pid = 0, $level = 0)
+{
+	static $results = [];//只会被初始化一次，函数执行完毕后不会释放，只能修饰局部变量
+	foreach ($cities as $city)
+	{
+		if ($city['pid'] === $pid)
+		{
+			$city['level'] = $level;
+			$results[] = $city;
+			testStatic($cities, $city['id'], $level + 1);
+		}
+	}
+	return $results;
+}
+
+var_dump(testStatic($cities));
+
+/**
+* array(6) {
+    [0]=>
+    array(4) {
+      ["id"]=>
+      int(1)
+      ["pid"]=>
+      int(0)
+      ["name"]=>
+      string(9) "广东省"
+      ["level"]=>
+      int(0)
+    }
+    [1]=>
+    array(4) {
+      ["id"]=>
+      int(4)
+      ["pid"]=>
+      int(1)
+      ["name"]=>
+      string(9) "深圳市"
+      ["level"]=>
+      int(1)
+    }
+    [2]=>
+    array(4) {
+      ["id"]=>
+      int(6)
+      ["pid"]=>
+      int(1)
+      ["name"]=>
+      string(9) "广州市"
+      ["level"]=>
+      int(1)
+    }
+    [3]=>
+    array(4) {
+      ["id"]=>
+      int(2)
+      ["pid"]=>
+      int(0)
+      ["name"]=>
+      string(9) "山东省"
+      ["level"]=>
+      int(0)
+    }
+    [4]=>
+    array(4) {
+      ["id"]=>
+      int(5)
+      ["pid"]=>
+      int(2)
+      ["name"]=>
+      string(9) "烟台市"
+      ["level"]=>
+      int(1)
+    }
+    [5]=>
+    array(4) {
+      ["id"]=>
+      int(3)
+      ["pid"]=>
+      int(0)
+      ["name"]=>
+      string(9) "北京市"
+      ["level"]=>
+      int(0)
+    }
+  }
+ */
+ ```
