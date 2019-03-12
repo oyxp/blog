@@ -194,53 +194,64 @@ $username = 'SnailZED';
 //changUsernameByReference($username);
 //var_dump($username);
 
-$cities = [
-	[
-		'id'   => 1,
-		'pid'  => 0,
-		'name' => '广东省'
-	],
-	[
-		'id'   => 2,
-		'pid'  => 0,
-		'name' => '山东省'
-	],
-	[
-		'id'   => 3,
-		'pid'  => 0,
-		'name' => '北京市'
-	],
-	[
-		'id'   => 4,
-		'pid'  => 1,
-		'name' => '深圳市'
-	],
-	[
-		'id'   => 5,
-		'pid'  => 2,
-		'name' => '烟台市'
-	],
-	[
-		'id'   => 6,
-		'pid'  => 1,
-		'name' => '广州市'
-	],
-];
-function testStatic(array $cities, $pid = 0, $level = 0)
+//$cities = [
+//	[
+//		'id'   => 1,
+//		'pid'  => 0,
+//		'name' => '广东省'
+//	],
+//	[
+//		'id'   => 2,
+//		'pid'  => 0,
+//		'name' => '山东省'
+//	],
+//	[
+//		'id'   => 3,
+//		'pid'  => 0,
+//		'name' => '北京市'
+//	],
+//	[
+//		'id'   => 4,
+//		'pid'  => 1,
+//		'name' => '深圳市'
+//	],
+//	[
+//		'id'   => 5,
+//		'pid'  => 2,
+//		'name' => '烟台市'
+//	],
+//	[
+//		'id'   => 6,
+//		'pid'  => 1,
+//		'name' => '广州市'
+//	],
+//];
+//function testStatic(array $cities, $pid = 0, $level = 0)
+//{
+//	static $results = [];
+//	foreach ($cities as $city)
+//	{
+//		if ($city['pid'] === $pid)
+//		{
+//			$city['level'] = $level;
+//			$results[] = $city;
+//			testStatic($cities, $city['id'], $level + 1);
+//		}
+//	}
+//	return $results;
+//}
+//
+//var_dump(testStatic($cities));
+
+$subject = '11abcdrtr';
+$substr = '1ab';
+
+if (strpos($subject, $substr))
 {
-	static $results = [];
-	foreach ($cities as $city)
-	{
-		if ($city['pid'] === $pid)
-		{
-			$city['level'] = $level;
-			$results[] = $city;
-			testStatic($cities, $city['id'], $level + 1);
-		}
-	}
-	return $results;
+	echo 'contains';
 }
-
-var_dump(testStatic($cities));
-
+else
+{
+	echo 'not contains';
+}
 die;
