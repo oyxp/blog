@@ -243,15 +243,43 @@ $username = 'SnailZED';
 //
 //var_dump(testStatic($cities));
 
-$subject = '11abcdrtr';
-$substr = '1ab';
+//$subject = '11abcdrtr';
+////$substr = '1ab';
+////
+////if (strpos($subject, $substr))
+////{
+////	echo 'contains';
+////}
+////else
+////{
+////	echo 'not contains';
+////}
+///
+///
+//$email = 'name@example.com';
+//$domain = strstr($email, '@');// @ea 结果也是一样
+//echo $domain; // 打印 @example.com
+//
+//echo PHP_EOL;
+//$user = strstr($email, '@', true); // 从 PHP 5.3.0 起
+//echo $user; // 打印 name
+//echo PHP_EOL;
 
-if (strpos($subject, $substr))
-{
-	echo 'contains';
-}
-else
-{
-	echo 'not contains';
-}
+//$user_ids = [1, 22, 33, 44, 55];
+//$user_id_string = '('. implode(',', $user_ids).')';
+//echo $user_id_string;//(1,22,33,44,55)
+
+$string = '1-2-3';
+
+var_dump(explode('-', $string));
+var_dump(explode('-', $string, 0));
+var_dump(explode('-', $string, 1));
+var_dump(explode('-', $string, 2));
+var_dump(explode('-', $string, -1));
+var_dump(explode('-', $string, -2));
+var_dump(explode('-', $string, -3));
+var_dump(explode('-', $string, -4));
+
+
+
 die;
