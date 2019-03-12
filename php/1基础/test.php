@@ -138,17 +138,59 @@
 //echo `ls ${dir}`;
 ////var_dump(shell_exec('ls -al'));
 ///
-interface Animal {
-	public function eat();
+//interface Animal {
+//	public function eat();
+//}
+//
+//class Cat implements Animal{
+//	public function eat(){
+//		echo 'cat eat';
+//	}
+//}
+//
+//$a = new Cat;
+//echo $a instanceof Animal ? 'YES':'NO';//YES
+//echo $a instanceof Cat ? 'YES':'NO';//YES
+
+//方法1
+$username = 'SnailZED';
+//
+//function changUsername($username)
+//{
+//	$GLOBALS['username'] = $username;
+////	unset($GLOBALS['username']);//unset之后，$username值为NULL
+//}
+//
+//changUsername('Snail');
+//var_dump($username);//string(5) "Snail"
+
+function changUsernameByGlobal($username1)
+{
+	global $username;
+	$username = $username1;
+	unset($username);//unset的是引用，不会影响外部值
 }
 
-class Cat implements Animal{
-	public function eat(){
-		echo 'cat eat';
-	}
+changUsernameByGlobal('Snail');
+var_dump($username);//string(5) "Snail"
+
+
+$_POST['username'] = 'SnailZED';
+
+function changUsernameByGlobalArray($username1)
+{
+	$_POST['username'] = $username1;
 }
 
-$a = new Cat;
-echo $a instanceof Animal ? 'YES':'NO';//YES
-echo $a instanceof Cat ? 'YES':'NO';//YES
+changUsernameByGlobalArray('Snail');
+var_dump($_POST['username']);
+
+$username = 'SnailZED';
+function changUsernameByReference(&$username1)
+{
+	$username1 = 'Snail';
+}
+
+changUsernameByReference($username);
+var_dump($username);
 die;
