@@ -290,15 +290,22 @@ $username = 'SnailZED';
 //echo PHP_EOL;
 
 
-$string = 'abcdefghijklmnopqrxtuvabc';
+//$string = 'abcdefghijklmnopqrxtuvabc';
+//
+//$str = str_replace(['a', 'b', 'c'], [1, 2, 3], $string);
+//$str2 = str_replace('abcd', '123', $string);
+//echo $str, PHP_EOL;//123defghijklmnopqrxtuv123
+//echo $str2, PHP_EOL;//123efghijklmnopqrxtuvabc
+//
+//$search  = array('A', 'B', 'C', 'D', 'E');
+//$replace = array('B', 'C', 'D', 'E', 'F');
+//$subject = 'A';
+//echo str_replace($search, $replace, $subject);//F
 
-$str = str_replace(['a', 'b', 'c'], [1, 2, 3], $string);
-$str2 = str_replace('abcd', '123', $string);
-echo $str, PHP_EOL;//123defghijklmnopqrxtuv123
-echo $str2, PHP_EOL;//123efghijklmnopqrxtuvabc
+//printf("%u", ip2long('127.0.0.1'));//2130706433
+//echo long2ip(2130706433);//127.0.0.1
 
-$search  = array('A', 'B', 'C', 'D', 'E');
-$replace = array('B', 'C', 'D', 'E', 'F');
-$subject = 'A';
-echo str_replace($search, $replace, $subject);//F
+$name = 'SnailZED';
+$school = 'GN';
+print $name . $school;
 die;
