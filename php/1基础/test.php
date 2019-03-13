@@ -269,17 +269,18 @@ $username = 'SnailZED';
 //$user_id_string = '('. implode(',', $user_ids).')';
 //echo $user_id_string;//(1,22,33,44,55)
 
-$string = '1-2-3';
+//$string = '1-2-3';
+//
+//var_dump(explode('-', $string));
+//var_dump(explode('-', $string, 0));
+//var_dump(explode('-', $string, 1));
+//var_dump(explode('-', $string, 2));
+//var_dump(explode('-', $string, -1));
+//var_dump(explode('-', $string, -2));
+//var_dump(explode('-', $string, -3));
+//var_dump(explode('-', $string, -4));
+//
 
-var_dump(explode('-', $string));
-var_dump(explode('-', $string, 0));
-var_dump(explode('-', $string, 1));
-var_dump(explode('-', $string, 2));
-var_dump(explode('-', $string, -1));
-var_dump(explode('-', $string, -2));
-var_dump(explode('-', $string, -3));
-var_dump(explode('-', $string, -4));
-
-
-
+$string = '123456';
+echo strrev($string);
 die;
