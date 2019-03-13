@@ -284,11 +284,21 @@ $username = 'SnailZED';
 //$string = '123456';
 //echo strrev($string);
 
-$money = 123456.789123;
+//echo chr(97);//a
+//echo PHP_EOL;
+//echo ord('a');//97
+//echo PHP_EOL;
 
-echo number_format($money, 2, '.', '');//123456.79
-echo PHP_EOL;
-echo number_format($money, 3, '.', ',');//123456.78
-echo PHP_EOL;
 
+$string = 'abcdefghijklmnopqrxtuvabc';
+
+$str = str_replace(['a', 'b', 'c'], [1, 2, 3], $string);
+$str2 = str_replace('abcd', '123', $string);
+echo $str, PHP_EOL;//123defghijklmnopqrxtuv123
+echo $str2, PHP_EOL;//123efghijklmnopqrxtuvabc
+
+$search  = array('A', 'B', 'C', 'D', 'E');
+$replace = array('B', 'C', 'D', 'E', 'F');
+$subject = 'A';
+echo str_replace($search, $replace, $subject);//F
 die;
