@@ -281,6 +281,14 @@ $username = 'SnailZED';
 //var_dump(explode('-', $string, -4));
 //
 
-$string = '123456';
-echo strrev($string);
+//$string = '123456';
+//echo strrev($string);
+
+$money = 123456.789123;
+
+echo number_format($money, 2, '.', '');//123456.79
+echo PHP_EOL;
+echo number_format($money, 3, '.', ',');//123456.78
+echo PHP_EOL;
+
 die;
