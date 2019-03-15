@@ -68,3 +68,8 @@ if(!empty($session_id)){
 session_start();
 //执行逻辑后，最终要把sessionid返回给前端
 ```
+
+## 3、session自定义实现
+
+      （1）、JWT
+      （2）、Token
