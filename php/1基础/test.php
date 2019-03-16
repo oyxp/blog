@@ -305,7 +305,157 @@ $username = 'SnailZED';
 //printf("%u", ip2long('127.0.0.1'));//2130706433
 //echo long2ip(2130706433);//127.0.0.1
 
-$name = 'SnailZED';
-$school = 'GN';
-print $name . $school;
-die;
+class Magic
+{
+	private $name;
+
+	/**构造方法 使用new关键字实例化对象时触发
+	 * Magic constructor.
+	 */
+	public function __construct()
+	{
+		var_dump(__METHOD__);
+	}
+
+	/**
+	 * 析构方法：越后声明的对象越先销毁，显式置为NULL会先销毁，和PHP GC回收机制，引用计数
+	 */
+	public function __destruct()
+	{
+		// TODO: Implement __destruct() method.
+		var_dump(__METHOD__);
+	}
+
+	/**
+	 *当使用 var_dump()打印对象时触发
+	 */
+	public function __debugInfo()
+	{
+		var_dump(__METHOD__);
+	}
+
+	/**
+	 *当使用 serialize()函数序列化对象时触发
+	 */
+	public function __sleep()
+	{
+		// TODO: Implement __sleep() method.
+		var_dump(__METHOD__);
+	}
+
+	/**
+	 *当使用 unserialize()函数反序列化对象时触发
+	 */
+	public function __wakeup()
+	{
+		// TODO: Implement __wakeup() method.
+		var_dump(__METHOD__);
+	}
+
+	/**
+	 *当把对象当成字符创输出时触发
+	 */
+	public function __toString()
+	{
+		var_dump(__METHOD__);
+		return '';
+	}
+
+	/**当调用不存在的方法时触发；不可访问的方法会报错
+	 *
+	 * @param $name
+	 * @param $arguments
+	 */
+	public function __call($name, $arguments)
+	{
+		// TODO: Implement __call() method.
+		var_dump(__METHOD__);
+	}
+
+	/**当调用不存在的静态方法时触发；不可访问的静态方法会报错
+	 *
+	 * @param $name
+	 * @param $arguments
+	 */
+	public static function __callStatic($name, $arguments)
+	{
+		// TODO: Implement __callStatic() method.
+		var_dump(__METHOD__);
+	}
+
+	/**
+	 * 使用 clone克隆对象时触发
+	 */
+	public function __clone()
+	{
+		// TODO: Implement __clone() method.
+		var_dump(__METHOD__);
+	}
+
+	/**
+	 *把对象当成函数来调用时触发
+	 */
+	public function __invoke()
+	{
+		// TODO: Implement __invoke() method.
+		var_dump(__METHOD__);
+	}
+
+	/**获取不可访问属性时触发(属性不存在，或者private、protected受限制不能访问)
+	 *
+	 * @param $name
+	 */
+	public function __get($name)
+	{
+		// TODO: Implement __get() method.
+		var_dump(__METHOD__);
+	}
+
+	/**设置不可访问属性时触发(属性不存在，或者private、protected受限制不能设置)
+	 *
+	 */
+	public function __set($name, $value)
+	{
+		// TODO: Implement __set() method.
+		var_dump(__METHOD__);
+	}
+
+	/**使用empty、isset访问不可访问属性时触发（（包括不存在和private、protected受访问限制的情况））
+	 *
+	 * @param $name
+	 */
+	public function __isset($name)
+	{
+		// TODO: Implement __isset() method.
+		var_dump(__METHOD__);
+	}
+
+	/**unset不可访问属性时触发（包括不存在和private、protected受访问限制的情况）
+	 *
+	 * @param $name
+	 */
+	public function __unset($name)
+	{
+		// TODO: Implement __unset() method.
+		var_dump(__METHOD__);
+	}
+}
+
+$m = new Magic(); //string(18) "Magic::__construct"
+echo $m;//string(17) "Magic::__toString"
+$m(1);//string(15) "Magic::__invoke"
+empty($m->name);//string(14) "Magic::__isset"
+isset($m->n);//string(14) "Magic::__isset"
+$m->name = 'SnailZED';//string(12) "Magic::__set"
+echo $m->name;//string(12) "Magic::__get"
+var_dump($m);//string(18) "Magic::__debugInfo"
+
+$ms = serialize($m);//string(14) "Magic::__sleep"
+$b = clone $m;//string(14) "Magic::__clone"
+
+unset($m->a);//string(14) "Magic::__unset"
+
+//最后会调用两次__destruct，string(17) "Magic::__destruct"
+//因为克隆出了一个对象
+
+
