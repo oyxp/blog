@@ -469,68 +469,112 @@ $username = 'SnailZED';
 //		return new $class;
 //	}
 //}
-//class Person
-//{
-//	public function eat()
-//	{
-//		echo 'EAT', PHP_EOL;
-//	}
-//}
-//
-//class Factory
-//{
-//	/**传入类名
-//	 *
-//	 * @param string $class
-//	 */
-//	public static function make($class)
-//	{
-//		return new $class;
-//	}
-//}
-//
-//Factory::make(Person::class)->eat();
-
-class Sms
+class Cat
 {
-	/**
-	 * @var \Sms
-	 */
-	private static $instance;
-
-	/**私有化构造方法
-	 * Sms constructor.
-	 */
-	private function __construct()
+	public function eat()
 	{
-	}
-
-	/**
-	 *私有化克隆方法
-	 */
-	private function __clone()
-	{
-		// TODO: Implement __clone() method.
-	}
-
-	/**获取本类实例对象
-	 *
-	 * @return \Sms
-	 */
-	public static function getInstance()
-	{
-		if (!(self::$instance instanceof self))
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
-	public function sendSms()
-	{
-		echo 'Send sms', PHP_EOL;
+		echo 'Cat eat', PHP_EOL;
 	}
 }
 
-Sms::getInstance()->sendSms();
+class Person
+{
+	public $name;
+	public $age;
 
+	public function __construct($name, $age)
+	{
+		$this->name = $name;
+		$this->age = $age;
+	}
+
+	public function eat()
+	{
+		echo 'Person eat', PHP_EOL;
+	}
+}
+
+class Factory
+{
+	/**存储对象，类名 => 类实例存放
+	 *
+	 * @var array
+	 */
+	private static $intances = [];
+
+	/**
+	 *
+	 * @param string $class 类名
+	 * @param bool   $new   是否强制使用新实例
+	 *
+	 * @return mixed
+	 */
+	public static function make($class, $args = [], $new = false)
+	{
+		if (!class_exists($class))
+		{
+			return false;
+		}
+		if ($new || !isset(self::$intances[$class]) || !(self::$intances[$class] instanceof $class))
+		{
+			try
+			{
+				$reflect = new ReflectionClass($class);
+				$constructor = $reflect->getConstructor();
+				$args = $constructor ? $args : [];
+				self::$intances[$class] = $reflect->newInstanceArgs($args);
+			}
+			catch (\ReflectionException $e)
+			{
+				return false;
+			}
+		}
+		return self::$intances[$class];
+	}
+}
+
+Factory::make(Person::class, ['SnailZED', 24])->eat();
+Factory::make(Cat::class)->eat();
+
+//class Sms
+//{
+//	/**
+//	 * @var \Sms
+//	 */
+//	private static $instance;
+//
+//	/**私有化构造方法
+//	 * Sms constructor.
+//	 */
+//	private function __construct()
+//	{
+//	}
+//
+//	/**
+//	 *私有化克隆方法
+//	 */
+//	private function __clone()
+//	{
+//		// TODO: Implement __clone() method.
+//	}
+//
+//	/**获取本类实例对象
+//	 *
+//	 * @return \Sms
+//	 */
+//	public static function getInstance()
+//	{
+//		if (!(self::$instance instanceof self))
+//		{
+//			self::$instance = new self();
+//		}
+//		return self::$instance;
+//	}
+//
+//	public function sendSms()
+//	{
+//		echo 'Send sms', PHP_EOL;
+//	}
+//}
+//
+//Sms::getInstance()->sendSms();
