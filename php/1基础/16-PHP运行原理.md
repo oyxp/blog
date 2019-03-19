@@ -2,8 +2,9 @@
 
 >1、版本控制软件（集中、分布式）
 
-    CVS，SVN：
-    GIT：
+    CVS：
+    SVN：集中式版本管理软件
+    GIT：分布式版本管理软件
     
 >2、PHP运行原理 nginx+PHP-FPM
 
