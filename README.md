@@ -11,7 +11,7 @@
     
 # 文章序列
     
-## 一、PHP基础
+## 一、PHP基础([Go语言基础](https://github.com/snailzed/gostudy))
 
 1. [PHP引用变量](./php/1基础/1-PHP引用变量.md)
 2. [PHP常量](./php/1基础/2-PHP常量.md)
@@ -71,7 +71,7 @@
 4. [web服务器优化](./高并发大流量解决方案/4-web服务器优化.md)
 
 
-## 八、队列相关(rabbitmq,kafka等)
+## 八、消息队列相关(rabbitmq,kafka等)
 
 1. [rabbitmq消息队列](./queue/1-rabbitmq.md)
 
@@ -81,3 +81,5 @@
 1、[swoole初识](./swoole/1-swoole初识.md)
 
 
+
+ 
