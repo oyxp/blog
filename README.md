@@ -43,6 +43,7 @@
 2. [MySQL innodb和myisam存储引擎](数据库/2-MySQL存储引擎InnoDB和MyISAM.md)
 3. [MySQL SQL性能优化](数据库/3-MySQL-SQL语句性能优化.md)
 4. [MySQL索引分类以及使用原则](数据库/6-MySQL索引分类、索引区别、建立原则以及注意事项.md)
+5. [MySQL-Innodb-select加锁分析](数据库/11-%20MySQL-innodb-select加锁分析.md)
 
 ## 四、缓存相关(NOSQL)
 
@@ -87,6 +88,8 @@
 1. [nginx大法好](./webserver/1-nginx.md)
 2. [openresty](./webserver/2-openresty.md)
 3. [LUA语言](./webserver/3-lua.md)
+4. [nginx常用配置](./webserver/4-nginx常用配置.md)
+
 
 ## 十一、web安全
 
