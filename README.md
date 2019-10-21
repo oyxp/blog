@@ -36,6 +36,10 @@
 2. [crontab用法](./linux/2-crontab用法.md)
 3. [vim使用](./linux/3-vim编辑器使用.md)
 4. [进程间通信方式](./linux/4-进程间通信方式.md)
+5. [ps命令详解](./linux/5-ps命令详解.md)
+6. [ubuntu日志系统](./linux/6-linux日志系统.md)
+7. [shell命令](./linux/7-shell.md)
+8. [ssh密钥登录服务器](./linux/8-ssh密钥登录服务器.md)
 
 ## 三、数据库
 
@@ -76,6 +80,9 @@
 ## 八、消息队列相关(rabbitmq,kafka等)
 
 1. [rabbitmq消息队列](./queue/1-rabbitmq.md)
+2. [php-amqplib连接rabbitmq](./queue/2-php-amqplib连接rabbitmq.md)
+3. [rabbitmq高可用集群搭建](./queue/3-rabbitmq高可用集群搭建.md)
+
 
 
 ## 九、Swoole

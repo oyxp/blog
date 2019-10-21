@@ -335,4 +335,38 @@ location ~* .*\.(jpg|jpeg|gif|tar|png|zip)${
 }
 ```
 
+#### 9、Nginx设置上传文件大小限制
+> 设置 client_max_body_size的大小即可，可以在http、server和location节点中设置
+```
+ server
+        {
+           listen 80;
+           server_name test.net;
+           root  /var/www/test;
+           client_max_body_size 100m;
+           location ~ [^/]\.php(/|$)
+             {
+                include        fastcgi_params;
+                fastcgi_pass   127.0.0.1:9000;
+                fastcgi_index  index.php;
+                client_max_body_size  500m;
+             }
+        }
+```
+
+> 如果是php，也需要修改php.ini配置文件
+
+```ini
+
+  ; Maximum allowed size for uploaded files.
+  ; http://php.net/upload-max-filesize
+  upload_max_filesize = 2M //上传文件大小
+
+
+  ; Maximum size of POST data that PHP will accept.
+  ; Its value may be 0 to disable the limit. It is ignored if POST data reading
+  ; is disabled through enable_post_data_reading.
+  ; http://php.net/post-max-size
+  post_max_size = 8M //post data大小
+```
 
