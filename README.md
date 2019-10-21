@@ -39,10 +39,10 @@
 
 ## 三、数据库
 
-1、[MySQL数据类型以及类型比较](数据库/1-MySQL数据类型以及类型比较.md)
-2、[MySQL innodb和myisam存储引擎](数据库/2-MySQL存储引擎InnoDB和MyISAM.md)
-3、[MySQL SQL性能优化](数据库/3-MySQL-SQL语句性能优化.md)
-4、[MySQL索引分类以及使用原则](数据库/6-MySQL索引分类、索引区别、建立原则以及注意事项.md)
+1. [MySQL数据类型以及类型比较](数据库/1-MySQL数据类型以及类型比较.md)
+2. [MySQL innodb和myisam存储引擎](数据库/2-MySQL存储引擎InnoDB和MyISAM.md)
+3. [MySQL SQL性能优化](数据库/3-MySQL-SQL语句性能优化.md)
+4. [MySQL索引分类以及使用原则](数据库/6-MySQL索引分类、索引区别、建立原则以及注意事项.md)
 
 ## 四、缓存相关(NOSQL)
 
