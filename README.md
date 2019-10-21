@@ -68,4 +68,8 @@
 4. [web服务器优化](./高并发大流量解决方案/4-web服务器优化.md)
 
 
-## 八、一些面试题
+## 八、队列相关(rabbitmq,kafka等)
+
+1. [rabbitmq消息队列](./queue/1-rabbitmq.md)
+
+
