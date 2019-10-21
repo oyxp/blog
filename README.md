@@ -30,5 +30,18 @@
 15. [网络协议相关](./php/1基础/15-网络协议相关.md)
 16. [PHP运行原理](./php/1基础/16-PHP运行原理.md)
 
+二、Linux
+
+1、[linux常见命令](./linux/1-Linux常见命令.md)
+2、[crontab用法](./linux/2-crontab用法.md)
+3、[vim使用](./linux/3-vim编辑器使用.md)
+
+三、mysql
+
+1、[MySQL数据类型以及类型比较](./mysql/1-MySQL数据类型以及类型比较.md)
 
 
+四、缓存相关
+
+1、[redis简介、数据结构以及持久化方式](./缓存解决方案/1-redis简介、数据结构和持久化方式.md)
+2、[redis集群方案](./缓存解决方案/2-redis集群方案.md)  
