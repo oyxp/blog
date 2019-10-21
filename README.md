@@ -84,7 +84,9 @@
 
 ## 十、web服务器
 
-1、[nginx大法好](./webserver/1-nginx.md)
+1. [nginx大法好](./webserver/1-nginx.md)
+2. [openresty](./webserver/2-openresty.md)
+3. [LUA语言](./webserver/3-lua.md)
 
 ## 十一、web安全
 
