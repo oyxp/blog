@@ -1,3 +1,5 @@
+# MySQL SQL语句性能优化
+
 ## 1、查找分析SQL执行慢的方法
     
     1）：记录慢日志，然后使用mysqldumpslow或者pt-query-digest分析SQL
@@ -10,9 +12,8 @@
     
     4）：show processlist;可以用查看出有问题的进程
     
-    5）：explian：分析单条语句执行
     
-## 2、优化查询
+## 2、通用优化查询方法
    
      1）只查询出需要返回的列字段数据
      2）重复查询相同的数据，可以使用缓存（file，redis，memorycache）
@@ -28,3 +29,7 @@
      8）分区分表
      9）修改MySQL配置，合理增加查询缓存
     
+## 3、explain分析并优化sql语句（神器）
+> 关注指标 type、key、rows以及extra。通过分析sql性能进行优化
+        
+        

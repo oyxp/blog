@@ -30,17 +30,19 @@
 17. [PHP的一些坑](./php/1基础/20-php的坑.md)
 18. [PHP的垃圾回收机制](./php/1基础/21-php垃圾回收机制.md)
 
-## 二、Linux
+## 二、Linux(ubuntu/centos)
 
 1. [linux常见命令](./linux/1-Linux常见命令.md)
 2. [crontab用法](./linux/2-crontab用法.md)
 3. [vim使用](./linux/3-vim编辑器使用.md)
 4. [进程间通信方式](./linux/4-进程间通信方式.md)
 
-## 三、mysql
+## 三、数据库
 
-1、[MySQL数据类型以及类型比较](./mysql/1-MySQL数据类型以及类型比较.md)
-
+1、[MySQL数据类型以及类型比较](数据库/1-MySQL数据类型以及类型比较.md)
+2、[MySQL innodb和myisam存储引擎](数据库/2-MySQL存储引擎InnoDB和MyISAM.md)
+3、[MySQL SQL性能优化](数据库/3-MySQL-SQL语句性能优化.md)
+4、[MySQL索引分类以及使用原则](数据库/6-MySQL索引分类、索引区别、建立原则以及注意事项.md)
 
 ## 四、缓存相关(NOSQL)
 
