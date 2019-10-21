@@ -137,7 +137,7 @@
       
       
  ## 6、redis实现秒杀功能
- >使用redis的list类型，进行pop
+ >原理都是利用redis的原子性操作，方案有很多种。使用redis的list类型，进行pop
  >   
       
      （1）将商品存入redis，存为一个redis队列
