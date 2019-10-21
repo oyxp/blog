@@ -9,7 +9,7 @@
     
 # 文章序列
     
-## 一、PHP基础([Go语言基础](https://github.com/snailzed/gostudy))
+## 一、PHP基础([Golang基础](https://github.com/snailzed/gostudy))
 
 1. [PHP引用变量](./php/1基础/1-PHP引用变量.md)
 2. [PHP常量](./php/1基础/2-PHP常量.md)
@@ -27,7 +27,8 @@
 14. [面向对象常用设计模式](./php/1基础/14-面向对象常用设计模式.md)
 15. [网络协议相关](./php/1基础/15-网络协议相关.md)
 16. [PHP运行原理](./php/1基础/16-PHP运行原理.md)
-17. [PHP的坑](./php/1基础/20-php的坑.md)
+17. [PHP的一些坑](./php/1基础/20-php的坑.md)
+18. [PHP的垃圾回收机制](./php/1基础/21-php垃圾回收机制.md)
 
 ## 二、Linux
 
@@ -77,7 +78,15 @@
 ## 九、Swoole
 
 1、[swoole初识](./swoole/1-swoole初识.md)
+2、[开发自己的swoole框架](./swoole/2-开发自己的swoole框架.md)
 
+## 十、web服务器
 
+1、[nginx](./webserver/1-nginx.md)
+
+## 十一、web安全
+
+1. [XSS跨站脚本攻击](./web安全/1-XSS跨站脚本攻击.md)
+2. [CSRF跨站请求伪造](./web安全/2-CSRF跨站请求伪造.md)
 
  
