@@ -29,12 +29,14 @@
 14. [面向对象常用设计模式](./php/1基础/14-面向对象常用设计模式.md)
 15. [网络协议相关](./php/1基础/15-网络协议相关.md)
 16. [PHP运行原理](./php/1基础/16-PHP运行原理.md)
+17. [PHP的坑](./php/1基础/20-php的坑.md)
 
 ## 二、Linux
 
 1. [linux常见命令](./linux/1-Linux常见命令.md)
 2. [crontab用法](./linux/2-crontab用法.md)
 3. [vim使用](./linux/3-vim编辑器使用.md)
+4. [进程间通信方式](./linux/4-进程间通信方式.md)
 
 ## 三、mysql
 
@@ -51,6 +53,7 @@
 
 1. [TCP协议](./网络编程/1-tcp协议.md)
 2. [UDP协议](./网络编程/2-UDP协议.md)
+3. [select、poll、epoll和kqueue](./网络编程/3-select、poll、epoll和kqueue网络模型.md)
 
 ## 六、算法以及数据结构
 
@@ -71,5 +74,10 @@
 ## 八、队列相关(rabbitmq,kafka等)
 
 1. [rabbitmq消息队列](./queue/1-rabbitmq.md)
+
+
+## 九、Swoole
+
+1、[swoole初识](./swoole/1-swoole初识.md)
 
 
