@@ -95,7 +95,9 @@
 1. [nginx大法好](./webserver/1-nginx.md)
 2. [openresty](./webserver/2-openresty.md)
 3. [LUA基本数据类型](./webserver/3-lua基础数据类型.md)
-4. [nginx常用配置](./webserver/4-nginx常用配置.md)
+4. [lua表达式](./webserver/3.1-lua表达式.md)
+5. [lua控制结构](./webserver/3.2-lua控制结构.md)
+6. [nginx常用配置](./webserver/4-nginx常用配置.md)
 
 
 ## 十一、web安全
