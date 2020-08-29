@@ -106,3 +106,7 @@
 2. [CSRF跨站请求伪造](web-security/2-CSRF跨站请求伪造.md)
 
 ## 十二、Docker 
+
+
+## 十三、随笔
+1. [谈谈后端容灾方案](https://www.yuque.com/docs/share/b1e2912d-7329-4d76-aed5-aff9cf078e90?#)
