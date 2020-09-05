@@ -14,6 +14,7 @@
           2）、最新数据 【List】
           3）、计数器 【increby】
           4）、共同好友sns（social network site）【Set】
+          5）、过滤（bitmap）
           
  
  
